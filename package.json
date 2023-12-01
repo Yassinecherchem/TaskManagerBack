@@ -1,0 +1,24 @@
+{
+  "name": "task",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "package",
+  "main": "index.js",
+  "repository": "notyet",
+  "author": "me",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx babel-node src/index.jsx"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.22",
+    "xlsx": "^0.18.5"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
