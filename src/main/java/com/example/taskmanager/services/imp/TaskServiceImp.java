@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.taskmanager.mappers.IMapper;
 import com.example.taskmanager.model.Task;
+import com.example.taskmanager.model.Userr;
 import com.example.taskmanager.model.dto.TaskRequest;
 import com.example.taskmanager.repositories.TaskRepository;
 import com.example.taskmanager.services.TaskService;
@@ -46,6 +47,11 @@ public class TaskServiceImp implements TaskService {
     @Override
     public Optional<Task> findById(Long id) {
         return taskRepository.findById(id);
+    }
+
+    @Override
+    public List<Task> findByUserr(Userr userr) {
+        return taskRepository.findByUserr(userr);
     }
 
     @Override

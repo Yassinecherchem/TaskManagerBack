@@ -1,6 +1,7 @@
 package com.example.taskmanager.services;
 
 import com.example.taskmanager.model.Task;
+import com.example.taskmanager.model.Userr;
 import com.example.taskmanager.model.dto.TaskRequest;
 
 import java.util.List;
@@ -11,6 +12,7 @@ public interface TaskService {
    /*return TaskResponse*/ Task update(Long id, /*return TaskRequest*/TaskRequest taskRequest);
    /*return TaskResponse*/ List<Task> findAll();
    /*return TaskResponse*/ Optional<Task> findById(Long id);
+   List<Task> findByUserr(Userr userr);
     void delete(Long id);
     
 } 

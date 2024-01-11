@@ -28,8 +28,8 @@ public class TaskManagerApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Userr userr1 = Userr.builder().userName("yassine").password("yassinecher").build();
-        Userr userr2 = Userr.builder().userName("mehdi").password("lz").build();
+        Userr userr1 = Userr.builder().username("yassine").password("yassinecher").build();
+        Userr userr2 = Userr.builder().username("mehdi").password("lz").build();
         userRepository.saveAll(
             Arrays.asList(
                 userr1 ,userr2
