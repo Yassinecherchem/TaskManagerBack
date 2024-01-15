@@ -12,6 +12,12 @@ public interface TaskService {
    /*return TaskResponse*/ Task update(Long id, /*return TaskRequest*/TaskRequest taskRequest);
    /*return TaskResponse*/ List<Task> findAll();
    /*return TaskResponse*/ Optional<Task> findById(Long id);
+   List<Task> findTodoTasks(Userr userr);
+   List<Task> findTodoTasks();
+   List<Task> findInProgressTasks(Userr userr);
+   List<Task> findInProgressTasks();
+   List<Task> findDoneTasks(Userr userr);
+   List<Task> findDoneTasks();
    List<Task> findByUserr(Userr userr);
     void delete(Long id);
     

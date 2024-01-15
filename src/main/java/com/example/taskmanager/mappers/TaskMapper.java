@@ -25,7 +25,6 @@ public class TaskMapper implements IMapper<Task, TaskRequest, Task> {
             .description(dto.description())
             .taskStatus(dto.taskStatus())
             .reminder(dto.reminder())
-            .userr(userRepository.findById(dto.userId()).get())
             .build();
     }
 

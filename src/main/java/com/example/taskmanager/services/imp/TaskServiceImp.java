@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.taskmanager.mappers.IMapper;
 import com.example.taskmanager.model.Task;
+import com.example.taskmanager.model.TaskStatus;
 import com.example.taskmanager.model.Userr;
 import com.example.taskmanager.model.dto.TaskRequest;
 import com.example.taskmanager.repositories.TaskRepository;
@@ -52,6 +53,48 @@ public class TaskServiceImp implements TaskService {
     @Override
     public List<Task> findByUserr(Userr userr) {
         return taskRepository.findByUserr(userr);
+    }
+
+    @Override
+    public List<Task> findTodoTasks(Userr userr) {
+        return findByUserr(userr).stream().filter(
+            task -> task.getTaskStatus().equals(TaskStatus.TODO)
+        ).toList();
+    }
+
+    @Override
+    public List<Task> findTodoTasks() {
+        return findAll().stream().filter(
+            task -> task.getTaskStatus().equals(TaskStatus.TODO)
+        ).toList();
+    }
+
+    @Override
+    public List<Task> findInProgressTasks(Userr userr) {
+        return findByUserr(userr).stream().filter(
+            task -> task.getTaskStatus().equals(TaskStatus.TODO)
+        ).toList();
+    }
+
+    @Override
+    public List<Task> findInProgressTasks() {
+        return findAll().stream().filter(
+            task -> task.getTaskStatus().equals(TaskStatus.INPROGRESS)
+        ).toList();
+    }
+
+    @Override
+    public List<Task> findDoneTasks(Userr userr) {
+        return findByUserr(userr).stream().filter(
+            task -> task.getTaskStatus().equals(TaskStatus.TODO)
+        ).toList();
+    }
+
+    @Override
+    public List<Task> findDoneTasks() {
+        return findAll().stream().filter(
+            task -> task.getTaskStatus().equals(TaskStatus.DONE)
+        ).toList();
     }
 
     @Override

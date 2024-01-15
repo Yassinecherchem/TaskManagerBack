@@ -50,7 +50,7 @@ public class TaskManagerApplication implements CommandLineRunner {
                     .title("task2")
                     .date(LocalDate.now())
                     .description("description")
-                    .taskStatus(TaskStatus.TODO)
+                    .taskStatus(TaskStatus.INPROGRESS)
                     .reminder(true)
                     .userr(userr1).build(),
 
@@ -58,7 +58,7 @@ public class TaskManagerApplication implements CommandLineRunner {
                     .title("task3")
                     .date(LocalDate.now())
                     .description("description")
-                    .taskStatus(TaskStatus.TODO)
+                    .taskStatus(TaskStatus.DONE)
                     .reminder(true)
                     .userr(userr1).build(),
 
@@ -68,7 +68,22 @@ public class TaskManagerApplication implements CommandLineRunner {
                     .description("description")
                     .taskStatus(TaskStatus.TODO)
                     .reminder(false)
-                    .userr(userr2).build()
+                    .userr(userr2).build(),
+                    Task.builder()
+                    .title("task2")
+                    .date(LocalDate.now())
+                    .description("description")
+                    .taskStatus(TaskStatus.INPROGRESS)
+                    .reminder(true)
+                    .userr(userr1).build(),
+
+                Task.builder()
+                    .title("task3")
+                    .date(LocalDate.now())
+                    .description("description")
+                    .taskStatus(TaskStatus.DONE)
+                    .reminder(true)
+                    .userr(userr1).build()    
             )
         );
     }
